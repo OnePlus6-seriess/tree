@@ -327,4 +327,7 @@
     <string-array name="config_biometric_sensors" translatable="false" >
         <item>0:2:15</item> <!-- ID0:Fingerprint:Strong -->
     </string-array>
+
+    <!-- Whether key handler sends intent when changing slider position -->
+    <string name="config_alertSliderIntent">org.lineageos.oneplus.DeviceExtras.slider.UPDATE_SLIDER_POSITION</string>
 </resources>
