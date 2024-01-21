@@ -43,7 +43,6 @@ public class Startup extends BroadcastReceiver {
         org.evolution.oneplus.DeviceExtras.doze.DozeUtils.checkDozeService(context);
         EarGainPreference.restore(context);
         MicGainPreference.restore(context);
-        org.evolution.oneplus.DeviceExtras.touch.TouchscreenGestureSettings.MainSettingsFragment.restoreTouchscreenGestureStates(context);
         VibratorCallStrengthPreference.restore(context);
         VibratorNotifStrengthPreference.restore(context);
         VibratorStrengthPreference.restore(context);
