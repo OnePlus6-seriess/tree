@@ -43,7 +43,6 @@ public class Startup extends BroadcastReceiver {
         org.evolution.oneplus.DeviceExtras.doze.DozeUtils.checkDozeService(context);
         EarGainPreference.restore(context);
         MicGainPreference.restore(context);
-        org.evolution.oneplus.DeviceExtras.touch.TouchscreenGestureSettings.MainSettingsFragment.restoreTouchscreenGestureStates(context);
         VibratorCallStrengthPreference.restore(context);
         VibratorNotifStrengthPreference.restore(context);
         VibratorStrengthPreference.restore(context);
@@ -110,10 +109,6 @@ public class Startup extends BroadcastReceiver {
         if (enabled) {
         mHBM = false;
         restore(LoadingEffectModeSwitch.getFile(context), enabled);
-               }
-        enabled = sharedPrefs.getBoolean(DeviceExtras.KEY_TP_EDGE_LIMIT_SWITCH, false);
-        if (enabled) {
-            restore(TPEdgeLimitModeSwitch.getFile(context), enabled);
                }
         enabled = sharedPrefs.getBoolean(DeviceExtras.KEY_POWER_EFFICIENT_WQ_SWITCH, false);
         if (enabled) {

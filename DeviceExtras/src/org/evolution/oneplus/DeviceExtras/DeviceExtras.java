@@ -60,7 +60,6 @@ import org.evolution.oneplus.DeviceExtras.preferences.*;
 import org.evolution.oneplus.DeviceExtras.R;
 import org.evolution.oneplus.DeviceExtras.services.*;
 import org.evolution.oneplus.DeviceExtras.slider.SliderConstants;
-import org.evolution.oneplus.DeviceExtras.touch.TouchscreenGestureSettings;
 
 public class DeviceExtras extends PreferenceFragment
         implements Preference.OnPreferenceChangeListener {
@@ -120,15 +119,6 @@ public class DeviceExtras extends PreferenceFragment
     public static final String KEY_WIRELESS_CHARGING_SWITCH = "wireless_charging_mode";
     private static TwoStatePreference mPowerShareModeSwitch;
     private static TwoStatePreference mWirelessChargingModeSwitch;
-
-    public static final String KEY_CATEGORY_TOUCHSCREEN = "touchscreen";
-    public static final String KEY_TOUCHSCREEN_GESTURES = "touchscreen_gestures";
-    public static final String KEY_GAME_SWITCH = "game_mode";
-    public static final String KEY_GAME_SWITCH_WARNING = "game_mode_warning";
-    public static final String KEY_TP_EDGE_LIMIT_SWITCH = "tp_edge_limit";
-    private Preference mTouchScreenGestureSettings;
-    private static TwoStatePreference mGameModeSwitch;
-    private static TwoStatePreference mTPEdgeLimitModeSwitch;
 
     public static final String KEY_CATEGORY_SPEAKER_MIC = "speaker";
     public static final String KEY_EAR_GAIN = "earpiece_gain";
@@ -355,45 +345,6 @@ public class DeviceExtras extends PreferenceFragment
         }
 
         boolean touchscreenCategory = false;
-
-        // TouchScreen Gestures
-        touchscreenCategory = touchscreenCategory | isFeatureSupported(context, R.bool.config_deviceSupportsTouchScreenGestures);
-        if (isFeatureSupported(context, R.bool.config_deviceSupportsTouchScreenGestures)) {
-        }
-        else {
-            findPreference(KEY_TOUCHSCREEN_GESTURES ).setVisible(false);
-        }
-
-        // Game Mode
-        touchscreenCategory = touchscreenCategory | isFeatureSupported(context, R.bool.config_deviceSupportsGameMode);
-        if (isFeatureSupported(context, R.bool.config_deviceSupportsGameMode)) {
-            mGameModeSwitch = (TwoStatePreference) findPreference(KEY_GAME_SWITCH);
-            mGameModeSwitch.setEnabled(GameModeSwitch.isSupported(this.getContext()));
-            mGameModeSwitch.setChecked(GameModeSwitch.isCurrentlyEnabled(this.getContext()));
-            mGameModeSwitch.setOnPreferenceChangeListener(new GameModeSwitch());
-        }
-        else {
-           findPreference(KEY_GAME_SWITCH).setVisible(false);
-           findPreference(KEY_GAME_SWITCH_WARNING).setVisible(false);
-        }
-
-        // TP Edge Limit
-        touchscreenCategory = touchscreenCategory | isFeatureSupported(context, R.bool.config_deviceSupportsTPEdgeLimit);
-        if (isFeatureSupported(context, R.bool.config_deviceSupportsTPEdgeLimit)) {
-            mTPEdgeLimitModeSwitch = (TwoStatePreference) findPreference(KEY_TP_EDGE_LIMIT_SWITCH);
-            mTPEdgeLimitModeSwitch.setEnabled(TPEdgeLimitModeSwitch.isSupported(this.getContext()));
-            mTPEdgeLimitModeSwitch.setChecked(TPEdgeLimitModeSwitch.isCurrentlyEnabled(this.getContext()));
-            mTPEdgeLimitModeSwitch.setOnPreferenceChangeListener(new TPEdgeLimitModeSwitch());
-        }
-        else {
-           findPreference(KEY_TP_EDGE_LIMIT_SWITCH).setVisible(false);
-        }
-
-        if (!touchscreenCategory) {
-            getPreferenceScreen().removePreference((Preference) findPreference(KEY_CATEGORY_TOUCHSCREEN));
-        }
-
-        boolean speakerCategory = false;
 
         // Earpiece gain
         speakerCategory = speakerCategory | isFeatureSupported(context, R.bool.config_deviceSupportsEarGain);

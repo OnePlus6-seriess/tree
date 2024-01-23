@@ -96,24 +96,6 @@
             </intent-filter>
         </activity>
 
-        <!-- Touch Gesture Settings Activity -->
-        <activity
-            android:name=".touch.TouchscreenGestureSettings"
-            android:label="@string/touchscreen_gesture_settings_title">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".touch.ScreenOffLaunchGestureActivity"
-            android:permission="org.evolution.oneplus.DeviceExtras.touch.TRIGGER_SCREEN_OFF_GESTURE"
-            android:excludeFromRecents="true"
-            android:exported="true"
-            android:label="@string/touchscreen_gesture_settings_title"
-            android:theme="@style/AppTheme.Transparent">
-        </activity>
-
         <!-- Kcal Settings Activity -->
         <activity
             android:name=".kcal.KcalSettingsActivity"

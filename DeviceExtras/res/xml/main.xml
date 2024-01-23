@@ -210,38 +210,6 @@
             android:summary="@string/wireless_charging_mode_summary" />
     </PreferenceCategory>
 
-    <!-- Start of touchscreen Category -->
-    <PreferenceCategory
-        android:key="touchscreen"
-        android:title="@string/touchscreen_title">
-
-        <Preference
-            android:key="touchscreen_gestures"
-            android:title="@string/touchscreen_gesture_settings_title"
-            android:summary="@string/touchscreen_gesture_settings_summary"
-            android:persistent="false" >
-            <intent android:action="android.intent.action.MAIN"
-                    android:targetPackage="org.evolution.oneplus.DeviceExtras"
-                    android:targetClass="org.evolution.oneplus.DeviceExtras.touch.TouchscreenGestureSettings" />
-        </Preference>
-
-        <SwitchPreference
-            android:key="game_mode"
-            android:summary="@string/game_mode_summary"
-            android:title="@string/game_mode_title" />
-
-        <Preference
-            android:key="game_mode_warning"
-            android:icon="@drawable/ic_info_outline"
-            android:summary="@string/game_mode_warning"
-            android:persistent="false" />
-
-        <SwitchPreference
-            android:key="tp_edge_limit"
-            android:summary="@string/tp_edge_limit_mode_summary"
-            android:title="@string/tp_edge_limit_mode_title" />
-    </PreferenceCategory>
-
     <!-- Start of speaker & microphone Category -->
     <PreferenceCategory
         android:key="speaker"
