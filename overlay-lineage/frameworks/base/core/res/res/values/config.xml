@@ -29,15 +29,15 @@
 
     <!-- Names of the key handler classes -->
     <string-array name="config_deviceKeyHandlerClasses" translatable="false">
-        <item>org.evolution.oplus.OPlusExtras.slider.KeyHandler</item>
-        <item>org.evolution.oplus.OPlusExtras.touch.KeyHandler</item>
+        <item>com.awaken.oplus.OPlusExtras.slider.KeyHandler</item>
+        <item>com.awaken.oplus.OPlusExtras.touch.KeyHandler</item>
     </string-array>
 
     <!-- Whether device has physical tri state switch -->
     <bool name="config_hasAlertSlider">true</bool>
 
     <!-- Whether key handler sends intent when changing slider position -->
-    <string name="config_alertSliderIntent">org.evolution.oplus.OPlusExtras.slider.UPDATE_SLIDER_POSITION</string>
+    <string name="config_alertSliderIntent">com.awaken.oplus.OPlusExtras.slider.UPDATE_SLIDER_POSITION</string>
 
     <!-- The location of the devices physical tri state switch
          0: Left side
